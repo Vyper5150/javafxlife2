@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 /**
  * A JavaFX 8 program to run Conway's Game of Life.
  *
- * @author John Phillips
+ * @author Rob Shea
  */
 public class JavaFXLife extends Application {
 
