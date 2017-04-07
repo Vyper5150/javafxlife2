@@ -68,7 +68,7 @@ public class JavaFXLife extends Application {
         final Menu helpMenu = new Menu("Help");
         final Menu superMenu = new Menu("Super Speed");
 
-        myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, helpMenu);
+        myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, superMenu, helpMenu);
 
         /**
          * *********************************************************************
@@ -160,12 +160,12 @@ public class JavaFXLife extends Application {
         */
         
         MenuItem doubleSpeed = new MenuItem("2x Speed");
-        doubleSpeed.setAccelerator(Keycombination.keyCombination("Ctrl+Shift+P"));
+        doubleSpeed.setAccelerator(KeyCombination.keyCombination("Ctrl+Shift+P"));
         doubleSpeed.setOnAction(e -> lifePane.increaseSpeedx2());
         superMenu.getItems().add(doubleSpeed);
         
         MenuItem quadSpeed = new MenuItem("4x Speed");
-        quadSpeed.setAccelerator(Keycombination.keyCombination("Ctrl+Shift+M"));
+        quadSpeed.setAccelerator(KeyCombination.keyCombination("Ctrl+Shift+M"));
         quadSpeed.setOnAction(e -> lifePane.increaseSpeedx4());
         superMenu.getItems().add(quadSpeed);
         
@@ -190,13 +190,13 @@ public class JavaFXLife extends Application {
          */
         
         MenuItem rs = new MenuItem("RS");
-        jp.setOnAction(e -> {
+        rs.setOnAction(e -> {
             lifePane.pause();
             lifePane.clearCells();
             readFile(new File("rs.txt"));
             lifePane.drawCells();
         });
-        helpMenu.getItems().add(jp);        
+        helpMenu.getItems().add(rs);        
         
         MenuItem acorn = new MenuItem("Acorn");
         acorn.setOnAction(e -> {
