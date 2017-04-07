@@ -66,6 +66,7 @@ public class JavaFXLife extends Application {
         final Menu speedMenu = new Menu("Speed");
         final Menu optionsMenu = new Menu("Options");
         final Menu helpMenu = new Menu("Help");
+        final Menu superMenu = new Menu("Super Speed");
 
         myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, helpMenu);
 
@@ -153,6 +154,22 @@ public class JavaFXLife extends Application {
         slowerx100.setOnAction(e -> lifePane.decreaseSpeedx100());
         speedMenu.getItems().add(slowerx100);
 
+       /**
+        ***********************************************************************
+        * Super Speed Menu
+        */
+        
+        MenuItem doubleSpeed = new MenuItem("2x Speed");
+        doubleSpeed.setAccelerator(Keycombination.keyCombination("Ctrl+Shift+P"));
+        doubleSpeed.setOnAction(e -> lifePane.increaseSpeedx2());
+        superMenu.getItems().add(doubleSpeed);
+        
+        MenuItem quadSpeed = new MenuItem("4x Speed");
+        quadSpeed.setAccelerator(Keycombination.keyCombination("Ctrl+Shift+M"));
+        quadSpeed.setOnAction(e -> lifePane.increaseSpeedx4());
+        superMenu.getItems().add(quadSpeed);
+        
+        
         /**
          * *********************************************************************
          * Options Menu Section
@@ -166,7 +183,7 @@ public class JavaFXLife extends Application {
         color.setAccelerator(KeyCombination.keyCombination("Ctrl+C"));
         color.setOnAction(e -> lifePane.setShowColors(color.isSelected()));
         optionsMenu.getItems().add(color);
-
+        
         /**
          * *********************************************************************
          * Help Menu Section
