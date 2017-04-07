@@ -189,11 +189,11 @@ public class JavaFXLife extends Application {
          * Help Menu Section
          */
         
-        MenuItem jp = new MenuItem("JP");
+        MenuItem rs = new MenuItem("RS");
         jp.setOnAction(e -> {
             lifePane.pause();
             lifePane.clearCells();
-            readFile(new File("jp.txt"));
+            readFile(new File("rs.txt"));
             lifePane.drawCells();
         });
         helpMenu.getItems().add(jp);        
